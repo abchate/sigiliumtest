@@ -1,0 +1,452 @@
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #a38ce2; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; }
+
+h1 {
+    position: relative;
+    margin: 0 auto;
+    top: 25vh;
+    width: 100vw;
+    text-align: center;
+    font-family: 'Amatic SC';
+    font-size: 6vh;
+    color: #333;
+    opacity: 0.75;
+    animation: pulse 2.5s linear infinite;
+}
+
+#cooking {
+    position: relative;
+    margin: 0 auto;
+    top: 0;
+    width: 75vh;
+    height: 75vh;
+    overflow: hidden;
+}
+
+#cooking #area {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    transform-origin: 15% 60%;
+    animation: flip 2.1s ease-in-out infinite;
+}
+
+#cooking #area #sides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: 15% 60%;
+    animation: switchSide 2.1s ease-in-out infinite;
+}
+
+#cooking #area #sides #handle {
+    position: absolute;
+    bottom: 18%;
+    right: 80%;
+    width: 35%;
+    height: 20%;
+    background-color: transparent;
+    border-top: 1vh solid #333;
+    border-left: 1vh solid transparent;
+    border-radius: 100%;
+    transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
+}
+#cooking #area #sides #pan {
+    position: absolute;
+    bottom: 20%;
+    right: 30%;
+    width: 50%;
+    height: 8%;
+    background-color: #333;
+    border-radius: 0 0 1.4em 1.4em;
+    transform-origin: -15% 0;
+}
+
+#cooking #area #pancake {
+    position: absolute;
+    top: 24%;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(85deg);
+    animation: jump 2.1s ease-in-out infinite;
+}
+
+#cooking #area #pancake #pastry {
+    position: absolute;
+    bottom: 26%;
+    right: 37%;
+    width: 40%;
+    height: 45%;
+    background-color: #333;
+    box-shadow: 0 0 3px 0 #333;
+    border-radius: 100%;
+    transform-origin: -20% 0;
+    animation: fly 2.1s ease-in-out infinite;
+}
+
+#cooking .bubble {
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 0 0 0.25vh #4d4d4d;
+    opacity: 0;
+}
+
+#cooking .bubble:nth-child(1) {
+    margin-top: 2.5vh;
+    left: 58%;
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: #454545;
+    animation: bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
+}
+
+#cooking .bubble:nth-child(2) {
+    margin-top: 3vh;
+    left: 52%;
+    width: 2vh;
+    height: 2vh;
+    background-color: #3d3d3d;
+    animation: bubble 2s ease-in-out 0.35s infinite; 
+}
+
+#cooking .bubble:nth-child(3) {
+    margin-top: 1.8vh;
+    left: 50%;
+    width: 1.5vh;
+    height: 1.5vh;
+    background-color: #333;
+    animation: bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
+}
+
+#cooking .bubble:nth-child(4) {
+    margin-top: 2.7vh;
+    left: 56%;
+    width: 1.2vh;
+    height: 1.2vh;
+    background-color: #2b2b2b;
+    animation: bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
+}
+
+#cooking .bubble:nth-child(5) {
+    margin-top: 2.7vh;
+    left: 63%;
+    width: 1.1vh;
+    height: 1.1vh;
+    background-color: #242424;
+    animation: bubble 1.6s ease-in-out 1s infinite; 
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+        opacity: 0.25;
+    }
+    50% {
+        transform: scale(1.2, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0.25;
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    5% {
+        transform: rotate(-27deg);
+    }
+
+    30%, 50% {
+        transform: rotate(0deg);
+    }
+
+    55% {
+        transform: rotate(27deg);
+    }
+
+    83.3% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes switchSide {
+    0% {
+        transform: rotateY(0deg) ;
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 24;
+        transform: rotateX(85deg);
+    }
+    25% {
+        top: 10%;
+        transform: rotateX(0deg);
+    }
+    50% {
+        top: 30%;
+        transform: rotateX(85deg);
+    }
+    75% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(85deg);
+    }
+}
+
+@keyframes fly {
+    0% {
+        bottom: 26%;
+        transform: rotate(0deg);
+    }
+    10% {
+        bottom: 40%;
+    }
+    50% {
+        bottom: 26%;
+        transform: rotate(-190deg);
+    }
+    80% {
+        bottom: 40%;
+    }
+    100% {
+        bottom: 26%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: scale(0.15, 0.15);
+        top: 80%;
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.33, 0.33);
+        top: 60%;
+        opacity: 0;
+    }
+}
+
+
+
+.recette{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    border-radius: 15PX;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.imgrecette {
+    height: 500px;
+    width: 90%;
+    overflow: hidden;
+    border-radius: 15px;
+    display: contents;
+    box-shadow: rgb(58, 57, 57);
+    background-color: aliceblue;
+    
+}
+.imgrecette img {
+  height: 400px;
+  width: 80%;
+  border-radius: 15px;
+  transition: all 0.3s ease; 
+}
+
+
+.imgrecette img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); 
+}
+.ingredient {
+    margin-top:20px;
+    margin-left: 10px;
+    align-self: flex-start;
+    display: inline;
+
+}
+.prepa {
+    margin-top:20px;
+    margin-left: 10px;
+    /* align-self: flex-start;
+    display: inline; */
+
+}
+.etape:hover {
+  background-color: #f3a0da;
+  transition: background-color 0.3s ease; 
+  border-radius: 15px;
+}
+.timing{
+    width: 100%;
+    margin-top:20px;
+    margin-left: 10px;
+    align-items: center;
+    align-self: center;
+    background-color: rgb(169, 172, 185);
+    border-radius: 15PX;
+    display: flex;
+    flex-direction: column;
+   
+   
+   
+
+}
+.timing:hover h6, .timing:hover p, .line{
+  color: white;
+}
+
+.timing:hover .line {
+  border: 2px solid white; 
+}
+
+.timing:hover {
+    background-color: rgb(52, 70, 151);
+    border-radius: 15PX;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgb(58, 57, 57);
+    cursor: pointer;
+    
+   
+   
+   
+
+}
+
+
+.blue-icon {
+    color: blue;
+    margin-right: 10px; 
+  }
+
+  .line {
+    width: 500PX; 
+    height: 2px; 
+    display: block;
+    background-color: blue;
+    margin-top: 20px;
+    
+}
+
+.navbar {
+    background-color: blue;
+}
+
+    .navbar-brand {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+
+
+
+    }
+
+  .navbar-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-form input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    
+  }
+
+  .navbar-form button {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  footer {
+    background-color: rgb(8, 8, 8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+
+  }
+
+  .social-icons {
+    font-size: 24px;
+    margin: 0 10px;
+    color: rgb(252, 250, 250);
+  }
+
+  .social-icons:hover {
+    font-size: 30px;
+    margin: 0 10px;
+    color: rgb(163, 40, 67);
+  }
+
+  .ingredient-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-right: 5px; 
+  }
+
+ 
+.custom-card {
+  width:  140px; 
+  height: 140px; 
+  transition: all 0.3s ease; 
+}
+
+.custom-card:hover {
+  width: 150px;
+  height: 150px; 
+  background-color: rgb(169, 172, 185); 
+  cursor: pointer; 
+}
+
+.custom-img {
+  width: 50px;
+  height: 30px; 
+}
